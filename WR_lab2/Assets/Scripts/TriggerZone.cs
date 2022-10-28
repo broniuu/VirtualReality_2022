@@ -12,9 +12,12 @@ public class TriggerZone : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player")
         {
+            if(Inventory.charge == 4)
+            {
             transform.Find("door").SendMessage("DoorCheck");
+            }
         }
     }
 }
